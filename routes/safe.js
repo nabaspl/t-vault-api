@@ -72,7 +72,6 @@ router.patch('/:safeId', async (req,res)=>{
 
 router.patch('/create-secret/:safeId', async (req,res)=>{
     try{
-        console.log(req);
         const updateSafes = await Safe.updateOne(
             {_id:req.params.safeId},
             {$push:{
