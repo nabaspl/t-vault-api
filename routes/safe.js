@@ -39,7 +39,7 @@ router.post('/',async (req,res)=>{
         const savedSafe = await safe.save();
         res.status(200).json(savedSafe);
     }catch (err){
-        res.status(500).json({message:err});
+        res.status(403).json({message:err});
     }
 
 });
