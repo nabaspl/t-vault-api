@@ -14,6 +14,7 @@ app.use('/safe',safeRoute);
 mongoose.connect(process.env.DB_CONNECTION,()=>{
     console.log("connected");
 })
-app.listen(8000);
+const port = process.env.port || 8000;
+app.listen(port);
 
 
