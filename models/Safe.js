@@ -3,7 +3,7 @@ const SafeSchema = mongoose.Schema({
     name:{
         type:String,
         required:true,
-        unique: true
+        unique:true
     },
     owner:{
         type:String,
