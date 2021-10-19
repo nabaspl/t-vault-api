@@ -18,7 +18,7 @@ const SafeSchema = mongoose.Schema({
         required:true,
     },
     secrets:{
-        type:Array,
+        type:[{ type: String, unique: true }],
     },
     date:{
         type:Date,
