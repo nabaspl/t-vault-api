@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var arrayValidator = require('mongoose-array-validator');
 const SafeSchema = mongoose.Schema({
     name:{
         type:String,
@@ -18,12 +19,13 @@ const SafeSchema = mongoose.Schema({
         required:true,
     },
     secrets:{
-        type:[{ type: String, unique: true }],
+        type: Array,
+        uniqueItems: true
     },
     date:{
         type:Date,
         default:Date.now
     }
 });
-
+SafeSchema.plugin(arrayValidator);
 module.exports = mongoose.model('Safe',SafeSchema);
